@@ -6,10 +6,6 @@ function BlogList() {
   BlogList.propTypes = {};
   let [articles, setArticles] = useState([]);
 
-  const handleArticleClick = () => {
-    console.log("click");
-  };
-
   useEffect(() => {
     const getArticles = async () => {
       const response = await fetch(
@@ -31,13 +27,7 @@ function BlogList() {
     <>
       {articles.map((article, index) => {
         if (index > 2) return;
-        return (
-          <BlogCard
-            key={index}
-            article={article}
-            handleArticleClick={handleArticleClick}
-          />
-        );
+        return <BlogCard key={index} article={article} />;
       })}
       <div className="w-full py-8 text-center">
         <a
