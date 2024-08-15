@@ -1,6 +1,5 @@
-import { MyButton } from "./MyButton";
-import { useState } from "react";
 import { Dialog } from "@headlessui/react";
+import { MyButton } from "./MyButton";
 import { SkillsList } from "./SkillsList";
 import PropTypes from "prop-types";
 
@@ -26,18 +25,22 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
             {title}
           </Dialog.Title>
           <div className="m-2 mb-8 flex">
-            <MyButton
-              colorClass="bg-surface-mixed-300"
-              callback={() => console.log("click")}
-              text="View"
-              icon="iconoir-computer"
-            />
-            <MyButton
-              colorClass="bg-surface-mixed-300"
-              callback={() => console.log("click")}
-              text="Code"
-              icon="iconoir-github-circle"
-            />
+            <a href={hostedUri} target="_blank">
+              <MyButton
+                colorClass="bg-surface-mixed-300"
+                callback={() => console.log("click")}
+                text="View"
+                icon="iconoir-computer"
+              />
+            </a>
+            <a href={githubUri} target="_blank">
+              <MyButton
+                colorClass="bg-surface-mixed-300"
+                callback={() => console.log("click")}
+                text="Code"
+                icon="iconoir-github-circle"
+              />
+            </a>
           </div>
           <Dialog.Description className="m-2 text-sm text-surface-500 sm:text-lg">
             <h3>Description</h3>

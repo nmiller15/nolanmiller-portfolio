@@ -1,18 +1,20 @@
 import { SkillsList } from "./SkillsList";
 import PropTypes from "prop-types";
 
-export function ProjectCard({ project, handleClick }) {
+export function ProjectCard({ project, handleProjectClick }) {
   ProjectCard.propTypes = {
     project: PropTypes.object.isRequired,
-    handleClick: PropTypes.func,
+    handleProjectClick: PropTypes.func,
   };
 
   const { title, description, skills } = project;
-
+  const handleClick = () => {
+    handleProjectClick(project);
+  };
   return (
     <div
       className="group relative mt-3 cursor-pointer rounded-lg p-3 text-white transition-all duration-200 hover:bg-surface-200"
-      onClick={handleClick(project)}
+      onClick={handleClick}
     >
       <i className="iconoir-arrow-up-right-square transition-scale absolute right-0 pr-3 text-2xl duration-200 group-hover:scale-110"></i>
       <h3 className="text-lg font-semibold">{title}</h3>

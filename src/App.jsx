@@ -3,7 +3,7 @@ import ProjectDialog from "./ProjectDialog.jsx";
 import { useState } from "react";
 
 function App() {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
   let [selectedProject, setSelectedProject] = useState({});
 
   const handleProjectClick = (project) => {

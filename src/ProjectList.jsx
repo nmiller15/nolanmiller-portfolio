@@ -36,7 +36,7 @@ function ProjectList({ handleProjectClick }) {
           <ProjectCard
             key={index}
             project={project}
-            handleClick={handleProjectClick}
+            handleProjectClick={handleProjectClick}
           />
         );
       })}
