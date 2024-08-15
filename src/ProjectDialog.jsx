@@ -1,3 +1,4 @@
+import RenderList from "./RenderList";
 import { Dialog } from "@headlessui/react";
 import { MyButton } from "./MyButton";
 import { SkillsList } from "./SkillsList";
@@ -48,38 +49,9 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
               Description
             </h3>
             <p className="mt-3 text-surface-mixed-600">{description}</p>
-            {stack && (
-              <>
-                <h3 className="mt-8 pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
-                  Stack
-                </h3>
-                <ul className="mt-3">
-                  {stack.map((item, index) => {
-                    return (
-                      <li key={index} className="ml-5 list-disc">
-                        {item}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </>
-            )}
-            {lessons && (
-              <>
-                <h3 className="mt-8 pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
-                  Lessons
-                </h3>
-                <ul className="mt-3">
-                  {lessons.map((item, index) => {
-                    return (
-                      <li key={index} className="ml-5 list-disc">
-                        {item}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </>
-            )}
+
+            {stack && <RenderList list={stack} title="Stack" />}
+            {lessons && <RenderList list={lessons} title="Lessons" />}
           </Dialog.Description>
           <div className="m-2 mt-8">
             <SkillsList skills={skills} />
