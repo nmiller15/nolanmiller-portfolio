@@ -14,10 +14,10 @@ export function MyButton({
   };
   return (
     <button
-      className={`mr-3 rounded-full text-lg font-semibold ${colorClass} flex items-center gap-2 px-6 py-3 ${icon && "pr-8"} hover:text-[#fff] active:bg-primary-300`}
+      className={`text-md rounded-full font-semibold ${colorClass} flex items-center gap-3 px-6 py-3 ${icon && "pr-8"} hover:text-[#fff] active:bg-primary-300`}
       onClick={callback}
     >
-      {icon && <i className={`${icon} text-2xl sm:text-3xl`}></i>}
+      {icon && <i className={`${icon} text-xl sm:text-2xl`}></i>}
       {text}
     </button>
   );

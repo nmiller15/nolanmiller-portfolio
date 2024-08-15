@@ -19,7 +19,6 @@ export function ProjectCard({ project, handleProjectClick }) {
       <i className="iconoir-arrow-up-right-square transition-scale absolute right-0 pr-3 text-2xl duration-200 group-hover:scale-110"></i>
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="pt-1 text-surface-500">{description}</p>
-      <h4 className="text-md text-surface-700 pt-2">Skills and Technologies</h4>
       <SkillsList skills={skills} />
     </div>
   );

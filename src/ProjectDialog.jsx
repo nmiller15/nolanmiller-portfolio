@@ -11,7 +11,8 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
   };
 
   if (!project) return;
-  const { title, description, skills, githubUri, hostedUri } = project;
+  const { title, description, skills, stack, lessons, githubUri, hostedUri } =
+    project;
 
   return (
     <Dialog
@@ -20,11 +21,11 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
       className="relative z-50"
     >
       <div className="fixed inset-0 flex w-screen items-center justify-center bg-surface-100 p-4 text-white">
-        <Dialog.Panel className="mx-auto w-full max-w-96 rounded-lg bg-surface-mixed-200 p-3 sm:max-w-xl lg:max-w-2xl">
+        <Dialog.Panel className="scrollbar-thumb-rounded-full scrollbar scrollbar-thumb-bg-surface-200 scrollbar-track-opacity-0 mx-auto h-5/6 w-full max-w-96 overflow-y-scroll rounded-lg bg-surface-mixed-200 p-3 sm:max-w-xl lg:max-w-2xl">
           <Dialog.Title className="m-2 mb-8 mt-6 text-3xl sm:text-4xl">
             {title}
           </Dialog.Title>
-          <div className="m-2 mb-8 flex">
+          <div className="m-2 mb-8 flex gap-4">
             <a href={hostedUri} target="_blank">
               <MyButton
                 colorClass="bg-surface-mixed-300"
@@ -42,18 +43,48 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
               />
             </a>
           </div>
-          <Dialog.Description className="m-2 text-sm text-surface-500 sm:text-lg">
-            <h3>Description</h3>
-            <p>{description}</p>
-            {/* <h3>Stack</h3>
-            <ul>
-              <li></li>
-            </ul> */}
+          <Dialog.Description className="m-2 text-sm text-surface-mixed-600 sm:text-lg">
+            <h3 className="pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+              Description
+            </h3>
+            <p className="mt-3 text-surface-mixed-600">{description}</p>
+            {stack && (
+              <>
+                <h3 className="mt-8 pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+                  Stack
+                </h3>
+                <ul className="mt-3">
+                  {stack.map((item, index) => {
+                    return (
+                      <li key={index} className="ml-5 list-disc">
+                        {item}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            )}
+            {lessons && (
+              <>
+                <h3 className="mt-8 pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+                  Lessons
+                </h3>
+                <ul className="mt-3">
+                  {lessons.map((item, index) => {
+                    return (
+                      <li key={index} className="ml-5 list-disc">
+                        {item}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            )}
           </Dialog.Description>
-          <div className="m-2 mt-6">
+          <div className="m-2 mt-8">
             <SkillsList skills={skills} />
           </div>
-          <div className="mb-6 mt-8 flex place-content-center">
+          <div className="mb-2 mt-8 flex place-content-center">
             <MyButton
               colorClass="bg-surface-mixed-300"
               callback={() => setIsOpen(false)}

@@ -7,6 +7,17 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     skills: ["React", "State Management", "Node.js", "PostgreSQL"],
+    stack: [
+      "Frontend Application - React",
+      "Backend API - Node/Express",
+      "Database - PostgreSQL",
+      "Hosting - AWS EC2",
+    ],
+    lessons: [
+      "I discovered Caddy is a great proxy server!",
+      "Experimenting with application design led me to a much better folder structure in my React application.",
+      "I tried to use Swagger CodeGen for my API, and while I did keep the documentation, the code that came out required lots of refactoring to allow me to add what I needed for this code.",
+    ],
     githubUri: "https://google.com",
     hostedUri: "https://google.com",
   },
