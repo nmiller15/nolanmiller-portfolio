@@ -37,11 +37,7 @@ function ProjectList({ handleProjectClick }) {
   };
 
   return (
-    <div
-      id="projects"
-      className="mx-auto max-w-96 px-10 sm:max-w-xl lg:max-w-2xl"
-    >
-      <h2 className="mt-8 p-3 text-2xl font-bold sm:text-3xl">Projects</h2>
+    <>
       {projects.map((project, index) => {
         return (
           <ProjectCard
@@ -51,7 +47,7 @@ function ProjectList({ handleProjectClick }) {
           />
         );
       })}
-    </div>
+    </>
   );
 }
 
