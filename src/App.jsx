@@ -1,8 +1,7 @@
-import ProjectList from "./ProjectList.jsx";
-import ProjectDialog from "./ProjectDialog.jsx";
-import BlogList from "./BlogList.jsx";
-import { useState } from "react";
-import supabase from "./supabase.js";
+import ProjectList from './ProjectList.jsx';
+import ProjectDialog from './ProjectDialog.jsx';
+import BlogList from './BlogList.jsx';
+import { useState } from 'react';
 
 function App() {
   let [isOpen, setIsOpen] = useState(false);
@@ -23,13 +22,13 @@ function App() {
           >
             <p className="max-w-80 pl-3 pt-20 text-5xl font-semibold text-surface-600">
               I create websites for <span className="text-white">people</span>,
-              for <span className="text-white">businesses</span>, and for{" "}
+              for <span className="text-white">businesses</span>, and for{' '}
               <span className="text-white">fun</span>.
             </p>
             <p className="mt-2 max-w-80 pl-3 text-surface-400">
               Check out some of the projects that I've worked on, if you're
               interested in working together or getting a website done, email me
-              at{" "}
+              at{' '}
               <a
                 href="mailto:mail@nolanmiller.me"
                 className="text-surface-500 underline transition-all duration-200 hover:text-white"

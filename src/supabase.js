@@ -11,7 +11,6 @@ export async function getProjects() {
     return;
   }
   projects.sort((a, b) => a.order - b.order);
-  return projects;
+  const filteredProjects = projects.filter((project) => project.display);
+  return filteredProjects;
 }
-
-export default supabase;

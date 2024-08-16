@@ -1,8 +1,8 @@
-import RenderList from "./RenderList";
-import { Dialog, Transition } from "@headlessui/react";
-import { MyButton } from "./MyButton";
-import { SkillsList } from "./SkillsList";
-import PropTypes from "prop-types";
+import RenderList from './RenderList';
+import { Dialog, Transition } from '@headlessui/react';
+import { MyButton } from './MyButton';
+import { SkillsList } from './SkillsList';
+import PropTypes from 'prop-types';
 
 export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
   ProjectDialog.propTypes = {
@@ -39,7 +39,7 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
         className="relative z-50"
       >
         {/* <div className="fixed inset-0 flex w-screen items-center justify-center bg-surface-100 p-4 text-white"> */}
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4 text-white">
+        <div className="bg-backdrop fixed inset-0 flex w-screen items-center justify-center p-4 text-white">
           <Dialog.Panel className="scrollbar-thumb-rounded-full scrollbar scrollbar-thumb-bg-surface-200 scrollbar-track-opacity-0 mx-auto h-5/6 w-full max-w-96 overflow-y-scroll rounded-lg bg-surface-mixed-200 p-3 sm:max-w-xl lg:max-w-2xl">
             <Dialog.Title className="m-2 mb-8 mt-6 text-3xl sm:text-4xl">
               {title}
@@ -54,7 +54,7 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
                 <a href={hostedUri} target="_blank">
                   <MyButton
                     colorClass="bg-surface-mixed-300"
-                    callback={() => console.log("click")}
+                    callback={() => console.log('click')}
                     text="View"
                     icon="iconoir-computer"
                   />
@@ -64,7 +64,7 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
                 <a href={githubUri} target="_blank">
                   <MyButton
                     colorClass="bg-surface-mixed-300"
-                    callback={() => console.log("click")}
+                    callback={() => console.log('click')}
                     text="Code"
                     icon="iconoir-github-circle"
                   />
@@ -76,10 +76,9 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
                 Description
               </h3>
               <p className="mt-3 text-surface-mixed-600">{description}</p>
-
-              {stack && <RenderList list={stack} title="Stack" />}
-              {lessons && <RenderList list={lessons} title="Lessons" />}
             </Dialog.Description>
+            {stack && <RenderList list={stack} title="Stack" />}
+            {lessons && <RenderList list={lessons} title="Lessons" />}
             <div className="m-2 mt-8">
               <SkillsList skills={skills} />
             </div>
