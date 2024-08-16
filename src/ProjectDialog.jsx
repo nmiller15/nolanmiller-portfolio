@@ -12,8 +12,16 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
   };
 
   if (!project) return;
-  const { title, description, skills, stack, lessons, githubUri, hostedUri } =
-    project;
+  const {
+    title,
+    description,
+    skills,
+    stack,
+    media,
+    lessons,
+    githubUri,
+    hostedUri,
+  } = project;
 
   return (
     <Transition
@@ -36,23 +44,32 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
             <Dialog.Title className="m-2 mb-8 mt-6 text-3xl sm:text-4xl">
               {title}
             </Dialog.Title>
+            {media && (
+              <div className="m-auto mb-10 w-auto border-2 border-surface-100 shadow-lg shadow-surface-200">
+                <video src={media} autoPlay="true" loop />
+              </div>
+            )}
             <div className="m-2 mb-8 flex gap-4">
-              <a href={hostedUri} target="_blank">
-                <MyButton
-                  colorClass="bg-surface-mixed-300"
-                  callback={() => console.log("click")}
-                  text="View"
-                  icon="iconoir-computer"
-                />
-              </a>
-              <a href={githubUri} target="_blank">
-                <MyButton
-                  colorClass="bg-surface-mixed-300"
-                  callback={() => console.log("click")}
-                  text="Code"
-                  icon="iconoir-github-circle"
-                />
-              </a>
+              {hostedUri && (
+                <a href={hostedUri} target="_blank">
+                  <MyButton
+                    colorClass="bg-surface-mixed-300"
+                    callback={() => console.log("click")}
+                    text="View"
+                    icon="iconoir-computer"
+                  />
+                </a>
+              )}
+              {githubUri && (
+                <a href={githubUri} target="_blank">
+                  <MyButton
+                    colorClass="bg-surface-mixed-300"
+                    callback={() => console.log("click")}
+                    text="Code"
+                    icon="iconoir-github-circle"
+                  />
+                </a>
+              )}
             </div>
             <Dialog.Description className="m-2 text-sm text-surface-mixed-600 sm:text-lg">
               <h3 className="pt-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">

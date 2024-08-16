@@ -13,6 +13,8 @@ const projects = [
       "Database - PostgreSQL",
       "Hosting - AWS EC2",
     ],
+    media:
+      "https://nolanmiller-image-hosting.s3.us-east-2.amazonaws.com/bottleneck.mp4",
     lessons: [
       "I discovered Caddy is a great proxy server!",
       "Experimenting with application design led me to a much better folder structure in my React application.",

@@ -84,7 +84,7 @@ function App() {
             id="projects"
             className="mx-auto mt-32 max-w-96 px-10 sm:max-w-xl lg:max-w-2xl"
           >
-            <h2 className="p-3 text-2xl font-bold sm:text-3xl">Projects</h2>
+            <h2 className="p-3 text-2xl font-bold sm:text-3xl">My Work</h2>
             <ProjectList handleProjectClick={handleProjectClick} />
           </div>
           <div
