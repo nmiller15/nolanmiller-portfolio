@@ -2,6 +2,7 @@ import ProjectList from "./ProjectList.jsx";
 import ProjectDialog from "./ProjectDialog.jsx";
 import BlogList from "./BlogList.jsx";
 import { useState } from "react";
+import supabase from "./supabase.js";
 
 function App() {
   let [isOpen, setIsOpen] = useState(false);

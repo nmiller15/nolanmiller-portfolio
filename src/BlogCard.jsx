@@ -6,7 +6,6 @@ export function BlogCard({ article }) {
   BlogCard.propTypes = {
     article: PropTypes.object.isRequired,
   };
-  console.log(article);
 
   const { title, description, tag_list, published_at, url } = article;
 
