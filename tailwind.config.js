@@ -42,7 +42,11 @@ export default {
         "sans-serif",
       ],
     },
-    extend: {},
+    extend: {
+      transitionDuration: {
+        3000: "3000ms",
+      },
+    },
   },
   plugins: [],
 };
