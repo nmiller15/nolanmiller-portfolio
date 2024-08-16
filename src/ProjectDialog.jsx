@@ -26,10 +26,10 @@ export default function ProjectDialog({ isOpen, setIsOpen, project = {} }) {
   return (
     <Transition
       show={isOpen}
-      enter="transition-opacity duration-3000 ease-in"
+      enter="transition-opacity duration-200 ease-in"
       enterFrom="opacity-0"
       enterTo="opacity-100"
-      leave="transition-all duration-150"
+      leave="transition-opacity duration-200"
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
