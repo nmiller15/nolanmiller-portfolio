@@ -26,7 +26,7 @@ function App() {
               <span className="text-white">fun</span>.
             </p>
             <p className="mt-2 max-w-80 pl-3 text-surface-400">
-              Check out some of the projects that I've worked on, if you're
+              Check out some of the projects that I've worked on. If you're
               interested in working together or getting a website done, email me
               at{' '}
               <a

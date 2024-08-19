@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
-import { BlogCard } from "./BlogCard";
-import PropTypes from "prop-types";
+import { useState, useEffect } from 'react';
+import { BlogCard } from './BlogCard';
 
 function BlogList() {
-  BlogList.propTypes = {};
   let [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getArticles = async () => {
       const response = await fetch(
-        "https://dev.to/api/articles?username=nmiller15",
+        'https://dev.to/api/articles?username=nmiller15',
         // {
         //   headers: {
         //     "api-key": import.meta.env.REACT_APP_DEVTO_API_KEY,
